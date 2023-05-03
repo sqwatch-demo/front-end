@@ -67,7 +67,7 @@ kill-server:
 	@if [ $$(docker ps -a -q -f name=$(IMAGE) | wc -l) -ge 1 ]; then docker rm -f $(IMAGE); fi
 
 release: BUILDER ?= minikube image
-release: NAME ?= sqwatch-demo/front-end
+release: NAME ?= sqwatchio/front-end
 release: TAG ?= latest
 release: 
 	$(BUILDER) build -t $(NAME):$(TAG) -f Dockerfile . 
